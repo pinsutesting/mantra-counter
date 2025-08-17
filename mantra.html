@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voice Mantra Counter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mantra.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>📿 Voice Mantra Counter</h1>
+
+    <div class="status-row">
+      <div class="counter">
+        Count: <span id="count">0</span> / <span id="target">108</span>
+      </div>
+      <div class="progress">
+        <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <input type="number" id="targetInput" placeholder="Enter target (e.g., 108)">
+        <button id="setTargetBtn">Set Target</button>
+      </div>
+
+      <div class="control-group">
+        <select id="languageSelect" title="Language">
+          <option value="hi-IN" selected>Hindi (hi-IN)</option>
+          <option value="en-US">English (en-US)</option>
+          <option value="sa-IN">Sanskrit (sa-IN)</option>
+        </select>
+        <input type="text" id="keywordInput" placeholder="Keyword (optional, e.g., om)">
+      </div>
+
+      <div class="control-group switches">
+        <label class="switch"><input type="checkbox" id="beepToggle" checked> <span>Beep on complete</span></label>
+        <label class="switch"><input type="checkbox" id="autoRestartToggle" checked> <span>Auto-restart</span></label>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="startBtn">🎤 Start</button>
+      <button id="stopBtn" disabled>⏸ Pause</button>
+      <button id="resetBtn">🔄 Reset</button>
+      <button id="incBtn">➕</button>
+      <button id="decBtn">➖</button>
+    </div>
+
+    <div class="metrics">
+      <span id="timer">00:00</span>
+      <span>•</span>
+      <span id="cpm">0 cpm</span>
+    </div>
+
+    <!-- <div class="support" id="supportMsg">Tip: Best works on Chrome. Allow mic when prompted.</div>
+
+    <div class="transcript" id="transcript">Your speech will appear here...</div>
+  </div> -->
+
+  <!-- Alarm Sound -->
+  <audio id="alarmSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+
+  <script src="mantra.js"></script>
+</body>
+</html>
